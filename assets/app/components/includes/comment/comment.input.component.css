@@ -1,0 +1,21 @@
+.comments-input textarea{
+    outline: none !important;
+    font-size: 13px;
+    background: transparent;
+    border-radius: 0px;
+    outline: none !important;
+    box-shadow: none !important;
+    border: none;
+    margin-bottom: 0px !important;
+}
+
+.comments-input a{
+    text-decoration: none;
+    color: #908E8E;
+    opacity: 0.5;
+    padding-right: 3px;
+}
+
+.comments-input a i{
+    font-size: 18px;
+}

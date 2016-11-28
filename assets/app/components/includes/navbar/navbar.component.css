@@ -1,0 +1,100 @@
+.navbar-container{
+    background: #ffffff;
+    margin-bottom: 0px !important;
+    border-bottom: 2px solid #E0E0E0;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+
+.navbar-container .logo-column img{
+    width: 65px;
+    height: 55px;
+    padding-top: 10px;
+}
+
+.navbar-container .left-column{
+     padding-top: 4px;
+     padding-bottom: 13px !important;
+}
+
+.navbar-container .right-column{
+     padding-top: 7px;
+     padding-bottom: 0px; 
+     padding-right: 36px;
+     text-align: right;
+}
+
+
+.navbar-container ul.icons {
+    margin-top: 18px;
+    padding: 0px;
+    list-style: none;
+}
+
+.navbar-container ul.icons li {
+    list-style: none;
+    display: inline;
+}
+
+.navbar-container ul.icons li a{
+    text-decoration: none;
+    color: #8D8B8B;
+    padding-left: 16px;
+    position: relative;
+}
+
+.navbar-container ul.icons li a i{
+    font-size: 15px;
+    z-index: 99999;
+}
+
+.navbar-container ul.icons li a span.new-notification{
+    position: absolute;
+    font-size: 8px;
+    border-radius: 100%;
+    color: #F7F7F7;
+    left: 27px;
+    margin-top: -8px;
+    z-index: 0;
+    padding: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background: #E84747;
+}
+
+.navbar-container ul.icons li a span.new-message{
+    position: absolute;
+    font-size: 8px;
+    border-radius: 100%;
+    color: #ffffff;
+    left: 30px;
+    margin-top: -8px;
+    z-index: 0;
+    padding: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background: #33A380;
+}
+
+.navbar-container ul.icons li a img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    margin-top: -10px;
+}
+
+.navbar-container ul.icons li a.logout:hover{
+    cursor: pointer;
+}
+
+.navbar-container ul.icons li a .fa-sign-out{
+    font-size: 16px;
+    padding-left: 5px;
+}
+
+@media screen and (max-width: 760px) {
+    .navbar-container .right-column{
+        padding-right: 35px !important;
+    }
+}

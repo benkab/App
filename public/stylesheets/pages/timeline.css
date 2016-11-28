@@ -1,0 +1,72 @@
+.timeline-right-side .card{
+    box-shadow: none !important;
+    border: 0.5px solid #E0E0E0;
+    background: #FEFEFE;
+    padding: 0px !important;
+    margin-bottom: 20px;
+}
+
+.timeline-right-side .card .card-content-top{
+    background: #F2F2F2;
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 25px; 
+    position: relative;
+}
+
+.timeline-right-side .card .card-content-top p.side-tile{
+    color: #030303;
+    opacity: 0.8;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.timeline-right-side .card .card-content-bottom{
+    padding: 20px;
+    padding-left: 25px;
+    padding-right: 25px; 
+    padding-bottom: 5px;
+}
+
+.timeline-right-side .card .card-content-bottom ul li img{
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+}
+
+.timeline-right-side .card .card-content-bottom ul.contacts-online li{
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.timeline-right-side .card .card-content-bottom ul.contacts-online li a span.user-names{
+    position: absolute;
+    left: 60px;
+    color: #030303;
+    opacity: 0.8;
+    font-weight: bold;
+    padding-top: 13px;
+}
+
+.timeline-right-side .card .card-content-bottom ul.contacts-online .online{
+	border-radius: 100px;
+    background: #28A43C;
+    padding: 3px;
+    font-size: 1px;
+    position: absolute;
+    left: 45px;
+    margin-top: 30px;
+    color: #28A43C;
+}
+
+.timeline-right-side .card .card-content-bottom ul.contacts-online .away{
+	border-radius: 100px;
+    background: #E19C3E;
+    color: #E19C3E;    
+    padding: 3px;
+    font-size: 1px;
+    position: absolute;
+    left: 45px;
+    margin-top: 30px;
+}
+

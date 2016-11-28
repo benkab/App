@@ -1,0 +1,61 @@
+<div class="row auth">
+    <div class="container">
+        <div class="col l8 push-l2 m10 push-m1 s12">
+            <div class="col l6 m6 s12">
+                <div class="card">
+                    <div class="card-content-top">
+                        <p class="title">
+                            <span>Log in</span>
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <form #signin="ngForm" (ngSubmit)="onSignIn(signin)">
+                            <div class="row">
+                                <input placeholder="Email" id="email" type="email" ngModel required name="email" autocomplete="off">
+                            </div>
+                            <div class="row">
+                                <input placeholder="Password" id="password" type="password" ngModel required name="password" autocomplete="off">
+                                <br>
+                                <span class="right"><a href="" class="forgottenPassword">Forgot password</a></span>
+                            </div>
+                            <div class="row">
+                                <button class="waves-effect waves-light btn btn-block" type="submit">SEND</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col l6 m6 s12">
+                <div class="card">
+                    <div class="card-content-top">
+                        <p class="title">
+                            <span>Create an account</span>
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <form #signup="ngForm" (ngSubmit)="onSignUp(signup)">
+                            <div class="row">
+                                <input placeholder="Firstname" id="firstname" type="text" name="firstname" ngModel required autocomplete="off">
+                            </div>
+                            <div class="row">
+                                <input placeholder="Lastname" id="lastname" type="text" ngModel required name="lastname" autocomplete="off">
+                            </div>
+                            <div class="row">
+                                <input placeholder="Email" id="email" type="email" ngModel required name="email" autocomplete="off">
+                            </div>
+                            <div class="row">
+                                <input placeholder="Password" id="password" type="password" ngModel required name="password" autocomplete="off">
+                            </div>
+                            <div class="row">
+                                <input placeholder="Position" id="position" type="text" ngModel required name="position" autocomplete="off">
+                            </div>
+                            <div class="row">
+                                <button class="waves-effect waves-light btn btn-block" type="submit">SEND</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

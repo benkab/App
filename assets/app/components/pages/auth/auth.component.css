@@ -1,0 +1,72 @@
+.auth .card{
+    box-shadow: none !important;
+    background: transparent;
+    margin-bottom: 20px;
+    padding: 0px !important;
+    margin-top: 50px;
+}
+
+.auth .col{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.auth .card .card-content-top{
+    background: #EEEEEE;
+    padding-left: 25px;
+    padding-right: 15px; 
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position: relative;
+    border: 1px solid #E0E0E0;
+    border-radius: 0px;
+    margin-bottom: 30px;
+}
+
+.auth .card .card-content-top p.title span{
+    font-size: 13px;
+    font-weight: bold;
+    color: #030303;
+    opacity: 0.7;
+}
+
+.auth .card .card-content-top p.title a{
+    position: absolute;
+}
+
+.auth .card .card-body{
+    background: transparent;
+}
+
+
+
+.auth .card .card-body form input{
+    outline: none !important;
+    font-size: 13px;
+    background: #ffffff;
+    border-radius: 0px;
+    outline: none !important;
+    box-shadow: none !important;
+    height: 45px;
+    border: none;
+    border: 1px solid #E0E0E0;
+    margin-bottom: 5px !important;
+    text-indent: 25px;
+}
+
+.auth .card .card-body form .forgottenPassword{
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: bold;
+    color: #030303;
+    opacity: 0.5;
+}
+
+.auth .card .card-body form button{
+    margin-top: 20px;
+    width: 100%;
+    font-size: 13px;
+    height: 45px;
+    border-radius: 0px !important;
+}
+

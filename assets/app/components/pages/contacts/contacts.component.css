@@ -1,0 +1,102 @@
+.contacts .card{
+    box-shadow: none !important;
+    border: 0.5px solid #E0E0E0;
+    background: #FEFEFE;
+    margin-bottom: 20px;
+    /*margin-top: 20px !important;*/
+}
+
+.contacts .card .card-content-top{
+    background: #EEEEEE;
+    padding-left: 25px;
+    padding-right: 15px; 
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position: relative;
+    border-radius: 0px;
+    margin-bottom: 0px;
+}
+
+.contacts .card .card-content-top .title{
+    color: #030303;
+    opacity: 0.8;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.contacts .card .card-body{
+    padding: 25px 30px;
+
+}
+
+.contacts .card .card-body ul{
+    padding: 0px;
+}
+
+.contacts .card .card-body ul li{
+    list-style: none;
+    display: inline;
+    position: relative;
+    text-align: center;
+}
+
+.contacts .card .card-body ul li a{
+    text-align: center;
+}
+
+.contacts .card .card-body img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.contacts .card .card-body .user-names{
+    color: #030303;
+    opacity: 0.8;
+    font-weight: bold;
+}
+
+.contacts .card .card-body .connect{
+    color: #ffffff;
+    background: #030303;
+    opacity: 0.8;
+    width: 100%;
+    border: 1px solid #030303;
+    padding: 7px 28px;
+}
+
+.contacts .card .card-body .message{
+    color: #ffffff;
+    background: #33A380;
+    opacity: 0.8;
+    width: 100%;
+    border: 1px solid #33A380;
+    padding: 7px 28px;
+}
+
+.contacts .card .card-body .accept{
+    color: #ffffff;
+    background: #AFA8AB;
+    opacity: 0.8;
+    width: 100%;
+    border: 1px solid #AFA8AB;
+    padding: 7px 28px;
+}
+
+.contacts .card .card-body .connect:hover{
+    opacity: 1;
+}
+
+.contacts .card .card-body .message:hover{
+    opacity: 1;
+}
+
+.contacts .card .card-body .accept:hover{
+    opacity: 1;
+}
+
+.contacts .card .card-body .contact-item{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

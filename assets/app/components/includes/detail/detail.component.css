@@ -1,0 +1,55 @@
+.details .card{
+    box-shadow: none !important;
+    border: 0.5px solid #E0E0E0;
+    margin-bottom: 20px;
+    padding: 20px;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.details .card .user-image-link{
+    text-align: center;
+}
+
+.details .card img{
+    width: 160px;
+    height: 160px;
+    border-radius: 100%;
+    text-align: center;
+}
+
+.details .card .user-names{
+    color: #030303;
+    opacity: 0.8;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.details .card .user-details{
+    border-top: 0.5px solid #E0E0E0;
+    border-bottom: 0.5px solid #E0E0E0;
+    margin-left: 1px;
+    margin-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 25px;
+}
+
+.details .card .user-details .user-details-number{
+    color: #030303;
+    opacity: 0.8;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.details .card .user-details ul {
+    padding: 0px;
+}
+
+.details .card .user-details ul li{
+
+}
+
+.details .card .user-details ul li a{
+    
+}

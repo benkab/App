@@ -1,0 +1,42 @@
+<div class="row navbar-container">
+    <div class="container">
+        <div class="col l2 m2 s4 logo-column">
+            <a [routerLink]="['/']"><img src="/img/logo.png" alt=""></a>
+        </div>
+        <div class="col l6 m6 hide-on-small-only left-column">
+            <search></search>
+        </div>
+        <div class="col l4 m4 s8 right-column">
+            <ul class="icons">
+                <li class="icons-item" *ngIf="isLoggedIn()" >
+                    <a (click)="onLogout()" class="icons-item-link logout">
+                        <span class="hide-on-small-only">Log out </span>
+                        <span class="fa fa-sign-out"></span>
+                    </a>
+                </li>
+                <li class="icons-item" *ngIf="!isLoggedIn()">
+                    <a [routerLink]="['/auth']" class="icons-item-link login">
+                        Log in
+                    </a>
+                </li>
+                <li class="icons-item" *ngIf="isLoggedIn()">
+                    <a href="" class="icons-item-link">
+                        <i class="fa fa-bell-o" aria-hidden="true"></i>
+                        <span class="new-notification">2</span>
+                    </a>
+                </li>
+                <li class="icons-item" *ngIf="isLoggedIn()">
+                    <a href="" class="icons-item-link">
+                        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                        <span class="new-message">5</span>
+                    </a>
+                </li>
+                <li class="icons-item" *ngIf="isLoggedIn()">
+                    <a [routerLink]="['/profile']" class="icons-item-link">
+                        <img src="/img/user-default.png" alt="">
+                    </a>
+                </li>          
+            </ul>
+        </div>
+    </div>
+</div>

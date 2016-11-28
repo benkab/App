@@ -1,0 +1,63 @@
+body, html {
+  padding: 0px;
+  font-family: 'Oxygen', sans-serif;
+  font-size: 13px;
+  background: #F2F2F2;
+  color: #908E8E;
+  margin: 0px;
+}
+
+.section{
+  padding: 0px !important;
+  margin: 0px;
+}
+
+.row{
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+router-outler{
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+menu, navbar{
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+input.ng-invalid.ng-touched{
+  border: 1px solid #F385B2 !important;
+}
+
+input.ng-valid{
+  border: 1px solid #E0E0E0 !important;
+}
+
+.card {
+  border-radius: 0px !important;
+}
+
+.search-container{
+  background: #ffffff;
+  padding-bottom: 10px !important;
+  border-bottom: 2px solid #E0E0E0;
+}
+
+
+@media screen and (max-width: 490px) {
+
+  .card .card-content-top{
+    padding: 25px 30px !important;
+  }
+
+  .card .card-content-bottom{
+    padding: 25px 30px !important;
+  }
+
+  .card .card-footer{
+    padding: 25px 30px !important;
+  }
+
+}

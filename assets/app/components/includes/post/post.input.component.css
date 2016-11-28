@@ -1,0 +1,49 @@
+.posts-input{
+    box-shadow: none !important;
+    border: 0.5px solid #E0E0E0;
+    background: #FEFEFE;
+    margin-bottom: 20px;
+    padding: 20px 35px;
+}
+
+.posts-input textarea, .posts-input input{
+    outline: none !important;
+    font-size: 13px;
+    background: transparent;
+    border-radius: 0px;
+    outline: none !important;
+    box-shadow: none !important;
+    border: none;
+}
+
+.posts-input a{
+    color: #030303;
+    opacity: 0.8;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.posts-input .file-field{
+    position: relative;
+    opacity: 0.5;
+    margin-bottom: 20px !important;
+}
+
+.posts-input .icon{
+    font-size: 18px;
+    padding-right: 5px;
+}
+
+.posts-input .file-field input{
+    max-width: 50px;
+}
+
+
+.posts-input .material-icons{
+    font-size: 18px;
+    color: #030303;
+    opacity: 0.6;
+    margin-top: 6px;
+}
+
+
