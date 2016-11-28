@@ -14,8 +14,8 @@
                         <span class="fa fa-sign-out"></span>
                     </a>
                 </li>
-                <li class="icons-item" *ngIf="!isLoggedIn()">
-                    <a [routerLink]="['/auth']" class="icons-item-link login">
+                <li class="icons-item login" *ngIf="!isLoggedIn()">
+                    <a [routerLink]="['/auth']" class="icons-item-link">
                         Log in
                     </a>
                 </li>

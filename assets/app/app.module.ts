@@ -29,6 +29,7 @@ import { AppService } from "./app.service";
 import { AuthService } from "./components/pages/auth/auth.service";
 import { NavService } from './components/includes/navbar/navbar.service';
 import { DetailsService } from './components/includes/detail/detail.service';
+import {AuthGuardService} from "./components/pages/auth/auth.guard.service";
 
 
 
@@ -57,7 +58,7 @@ import { DetailsService } from './components/includes/detail/detail.service';
         HttpModule
     ],
     bootstrap: [AppComponent],
-    providers: [AuthService, NavService, AppService]
+    providers: [AuthService, NavService, AppService, DetailsService, AuthGuardService]
 })
 export class AppModule {
 

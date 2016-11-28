@@ -1,3 +1,7 @@
+.messages{
+    margin-top: 35px !important;
+}
+
 .messages .card{
     padding: 0px !important;
 }

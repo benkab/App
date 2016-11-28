@@ -84,6 +84,21 @@
     margin-top: -10px;
 }
 
+.navbar-container ul.icons li.login {
+    position: relative;
+    width: 220px !important;
+}
+
+.navbar-container ul.icons li.login a{
+    position: absolute;
+    right: -27px;
+    width: 220px !important;
+}
+
+.navbar-container ul.icons li.login a:hover{
+    cursor: pointer;
+}
+
 .navbar-container ul.icons li a.logout:hover{
     cursor: pointer;
 }
