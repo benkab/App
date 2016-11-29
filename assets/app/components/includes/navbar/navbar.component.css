@@ -1,7 +1,6 @@
 .navbar-container{
-    background: #ffffff;
+    background: #4D4D4D;
     margin-bottom: 0px !important;
-    border-bottom: 2px solid #E0E0E0;
     padding-top: 10px !important;
     padding-bottom: 10px !important;
 }
@@ -38,7 +37,7 @@
 
 .navbar-container ul.icons li a{
     text-decoration: none;
-    color: #8D8B8B;
+    color: #E3E3E3 !important;
     padding-left: 16px;
     position: relative;
 }

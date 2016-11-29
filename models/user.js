@@ -21,7 +21,7 @@ var schema  = new Schema({
         type: String,
         required: true
     },
-    firstname : {
+    position : {
         type: String,
         required: true
     },
