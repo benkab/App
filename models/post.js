@@ -17,7 +17,13 @@ var schema  = new Schema({
     user : {
         type: Schema.Types.ObjectId,
         ref : 'User'
-    }
+    },
+    likes : [
+        {
+            type: Schema.Types.ObjectId,
+            ref : 'Like'
+        }
+    ]
 });
 
 module.exports = mongoose.model('Post', schema);

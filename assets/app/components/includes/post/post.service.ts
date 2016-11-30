@@ -8,7 +8,7 @@ import {Observable} from "rxjs";
 @Injectable()
 export class PostService{
 
-    private posts : Post[];
+    private posts : Post[] = [];
 
     constructor(private http: Http){}
 
@@ -19,7 +19,22 @@ export class PostService{
             ? '?token=' + localStorage.getItem('token')
             : '';
         return this.http.post('http://localhost:3000/post' + token, requestBody, {headers: headers})
-            .map((response: Response) => response.json())
+            .map((response: Response) => {
+                const result     = response.json();
+                const post       = new Post(
+                    result.obj.content,
+                    result.obj.image,
+                    result.obj._id,
+                    result.obj.created_at,
+                    result.obj.user.firstname,
+                    result.obj.user.lastname,
+                    result.obj.user._id,
+                    result.obj.user.position,
+                    result.obj.user.avatar
+                );
+                this.posts.push(post);
+                return post;
+            })
             .catch((error: Response) => Observable.throw(error.json()));
     }
 
@@ -44,7 +59,6 @@ export class PostService{
                 }
 
                 this.posts = transformedPosts;
-                console.log(transformedPosts);
                 return transformedPosts;
             })
             .catch((error: Response) => Observable.throw(error.json()));

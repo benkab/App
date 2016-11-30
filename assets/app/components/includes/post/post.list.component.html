@@ -1,0 +1,40 @@
+<div class="card posts" *ngFor="let post of posts">
+    <div class="card-content-top">
+        <a href="" class="user-link">
+            <img src="/img/{{post.user_avatar}}" alt="user-image">
+            <span class="user-names">{{post.user_firstname}} {{post.user_lastname}}</span>
+            <span class="user-title">{{post.user_position}}</span>
+        </a>
+        <span class="posted_at right">{{post.created_at}}</span>
+    </div>
+    <div class="card-image" *ngIf="post.image">
+        <img src="/img/posts/sample.jpg">
+    </div>
+    <div class="card-content-bottom">
+        <p class="post-content">{{post.content}}</p>
+        <div class="actions">
+            <a href=""><span>15 Comments</span></a>
+            <ul class="">
+                <li>
+                    <a href="">
+                        <span class="icon ion-android-favorite"></span>
+                        <span class="like-count">20</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="icon ion-android-share-alt"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="more">
+                        <span class="icon ion-android-more-vertical"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--<div class="card-footer">-->
+    <!--<comments></comments>-->
+    <!--</div>-->
+</div>
