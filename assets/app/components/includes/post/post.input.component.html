@@ -1,13 +1,13 @@
 <div class="card posts-input">
-    <form action="">
+    <form #post="ngForm" (ngSubmit)="onCreatePost(post)">
         <div class="input-field">
-            <textarea name="description" id="description" name="description" class="materialize-textarea" placeholder="Share your thoughts..."></textarea>
+            <textarea id="content" name="content" class="materialize-textarea" placeholder="Share your thoughts..." ngModel required autocomplete="off"></textarea>
         </div>
         <div class="file-field input-field">
             <span class="icon ion-image"></span>
             <span>  Attach an image</span>
-            <input type="file">
-            <a href="" class="right"><i class="material-icons">send</i></a>
+            <input type="file" ngModel autocomplete="off" name="image">
+            <button class="right" type="submit"><i class="material-icons">send</i></button>
         </div>
     </form>
 </div>

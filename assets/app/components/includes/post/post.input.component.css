@@ -16,11 +16,13 @@
     border: none;
 }
 
-.posts-input a{
+.posts-input button{
     color: #030303;
     opacity: 0.8;
     font-weight: bold;
-    text-decoration: none;
+    background: transparent;
+    border: none !important;
+    outline: none !important;
 }
 
 .posts-input .file-field{

@@ -38,7 +38,13 @@ var schema  = new Schema({
     actived : {
         type: Boolean,
         required: true
-    }
+    },
+    posts : [
+        {
+            type: Schema.Types.ObjectId,
+            ref : 'Post'
+        }
+    ]
 });
 
 schema.plugin(uniqueValidator);
