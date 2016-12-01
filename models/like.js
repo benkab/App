@@ -4,8 +4,7 @@ var Schema          = mongoose.Schema;
 var schema  = new Schema({
     liked : {
         type: Boolean,
-        required: true,
-        default : false
+        required: true
     },
     created_at : {
         type: Date,

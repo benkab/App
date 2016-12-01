@@ -2,6 +2,7 @@ var express     = require('express');
 var router      = express.Router();
 var User        = require('../models/user');
 var Post        = require('../models/post');
+var Like        = require('../models/like');
 var bcrypt      = require('bcryptjs');
 var jwt         = require('jsonwebtoken');
 
@@ -11,6 +12,7 @@ router.get('/', function (req, res, next) {
     Post.find()
         .sort({created_at : -1})
         .populate('user')
+        .populate('likes')
         .exec(function (err, posts){
             if(err){
                 return res.status(500).json({
@@ -46,7 +48,7 @@ router.post('/', function (req, res, next) {
     var content     = req.body.content;
     var image       = req.body.image;
     var created_at  = Date();
-
+    
     var decoded     = jwt.decode(req.query.token);
     User.findById(decoded.user._id, function(err, user){
 
@@ -78,8 +80,23 @@ router.post('/', function (req, res, next) {
                 message : 'Your post has been created!',
                 obj     : result
             });
+
         });
 
+        // var like = new Like({
+        //     liked : false,
+        //     user  : user,
+        //     post  : post
+        // });
+        
+        // like.save(function(err, result){
+        //     if(err){
+        //         return res.status(500).json({
+        //             title : 'An error has occured',
+        //             error : err
+        //         });
+        //     }
+        // });
 
     });
 

@@ -56,7 +56,8 @@ export class PostService{
                         post.user.lastname,
                         post.user._id,
                         post.user.position,
-                        post.user.avatar
+                        post.user.avatar,
+                        post.likes.liked
                     ));
                 }
 

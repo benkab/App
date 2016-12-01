@@ -16,8 +16,12 @@
             <a href=""><span>15 Comments</span></a>
             <ul class="">
                 <li>
-                    <a class="like" (click)="onLike()" >
+                    <a *ngIf="!isLoggedIn()">
                         <span class="icon ion-android-favorite"></span>
+                        <span class="like-count">20</span>
+                    </a>
+                    <a class="like" (click)="state = !post.like_state" *ngIf="isLoggedIn()">
+                        <span class="icon ion-android-favorite"[ngClass]="{isLiked: state==='post.like_state '}"></span>
                         <span class="like-count">20</span>
                     </a>
                 </li>

@@ -4,19 +4,18 @@
 
 .messages .card{
     padding: 0px !important;
-}
-
-.messages img{
-    border: 2px solid #c9c7c7;
+    box-shadow: none !important;
+    border: 0.5px solid #E0E0E0;
+    background: #FEFEFE;
+    margin-bottom: 20px;
 }
 
 .messages .contacts{
-    background: #f8f8f8;
-    height: 100%;
-    padding-left: 10px;
-    padding-right: 0px;
-    margin-bottom: -20px !important;
-    height: 780px;
+    height: 680px;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    background: #F9F9F9 !important;
+    padding-top: 15px;
 }
 
 .messages .contacts .search input{
@@ -29,26 +28,33 @@
     border-radius: 5px;
     margin: 0px !important;
     height: 32px;
-    padding-left: 10px;
+    text-indent: 10px;
     font-family:"Oxygen", Ionicons;
+    margin-bottom: 10px !important;
 }
 
 .messages .contacts .contacts-content{
-    padding-left: 13px;
-    padding-right: 25px;
+    padding-left: 0px;
+    padding-right: 0px;
     overflow: hidden;
 }
 
 .messages .contacts .contacts-content ul li{
-    margin-top: 10px;
-    margin-bottom: 20px;
     position: relative;
+    padding-left: 11% !important;
+    padding-right: 11% !important;
+    padding-top: 15px;
+    padding-bottom: 11px;
 }
 
+.messages .contacts .contacts-content ul li.active-message{
+    background: #EFF3F6 !important;
+    border-left: 2px solid #7BBDEF !important;
+}
 .messages .contacts .contacts-content ul li a{
     text-decoration: none;
-    
     width: 100%;
+    
 }
 
 .messages .contacts .contacts-content ul li a img{
@@ -62,108 +68,44 @@
     color: #838282;
     padding-left: 20px;
     position: absolute;
-    left: 80px;
+    left: 100px;
     display: inline;
-    width: 200px;
-    top: 10px;
+    top: 13px;
 }
 
-.messages .contacts .contacts-content ul li a span.user-location{
+.messages .contacts .contacts-content ul li a span.time_ago{
     text-decoration: none;
-    color: #c1c0c0;
-    padding-left: 20px;
-    position: absolute;
-    left: 80px;
-    display: inline;
-    width: 200px;
-    top: 30px;
-    font-size: 13px;
+    color: #838282;
+    font-size: 12px;
+    opacity: 0.7;
 }
 
-.messages .contacts .contacts-content ul li a small.online{
-    color: #2bbd3b;
-    background: #2bbd3b;
-    border-radius: 100%;
-    padding-right: 6px;
-    font-size: 7px;
-    position: absolute;
-    top: 22px;
-    left: 70px;
-}
-
-.messages .contacts .contacts-content ul li a small.away{
-    color: #e8b651 !important;
-    background: #e8b651 !important;
-}
-
-.messages .contacts .contacts-content ul li a small.off{
-    color: #fa2806 !important;
-    background: #fa2806 !important;
-}
-
-
-.messages .messages-previews{
-    height: 100%;
-    background: #f3f2f2;
-    height: 780px;
-    overflow: hidden;
-}
-
-.messages .messages-previews .contacts-content ul li a span.user-names{
+.messages .contacts .contacts-content ul li a .message-preview{
     text-decoration: none;
     color: #838282;
     padding-left: 20px;
     position: absolute;
-    left: 50px;
-    display: inline;
-    width: 200px;
-    top: 5px;
+    left: 100px;
+    top: 36px;
+    font-size: 12.5px;
+    margin-right: 11%;
 }
 
-.messages .messages-previews .contacts-content ul li a small.ago{
-    text-decoration: none;
-    color: #838282;
-    display: inline;
-    padding-top: 6px;
-
-}
-
-
-.messages .messages-previews .contacts-content ul li{
-    margin-bottom: 50px;
-}
-
-.messages .messages-previews .contacts-content ul li.active-message span.user-names{
-    color: #333333 !important;
-}
-
-.messages .messages-previews .contacts-content ul li.active-message .message-preview{
-    color: #838282 !important;
-}
-
-.messages .messages-previews .contacts-content ul li.active-message small.ago{
-    color: #333333 !important;
-}
-
-
-.messages .messages-previews .contacts-content ul li a .message-preview{
-    position: absolute;
-    left: 0px;
-    right: 0px;
-    padding-left: 70px;
-    text-align: left;
-    top: 30px;
-    font-size: 13px;
-    line-height: 13px;
-    color: #c1c0c0;
+.messages .messages-list-container{
+    padding-top: 25px;
+    padding-left: 0px !important;
     padding-right: 0px !important;
+    padding-bottom: 0px !important;
 }
 
 .messages .display-message{
-    padding-left: 10px;
     position: relative;
-    height: 780px;
+    height: 680px;
     padding-top: 17px;
+}
+
+.messages .display-message .message-title{
+    padding-left: 5% !important;
 }
 
 .messages .display-message .new_message_container{
@@ -177,33 +119,58 @@
     border: none;
     box-shadow: none;
     font-size: 13px;
-    border: 2px solid #e5e7e9;
+    border: none !important;
     background: #f2f4f4;
-    border-radius: 5px;
+    border-radius: 0px;
     margin: 0px !important;
-    height: 32px;
-    padding-left: 10px;
+    height: 80px !important;
+    padding-left: 0px !important;
     font-family:"Oxygen", Ionicons;
-    width: 100%;
-    height: 70px;
+    height: 90px;
+    padding-top: 20px;
+}
+
+.messages .display-message .new_message textarea{
+    outline: none;
+    border: none;
+    box-shadow: none;
+    font-size: 13px;
+    border: none !important;
+    background: #f2f4f4;
+    border-radius: 0px;
+    margin: 0px !important;
+    height: 80px !important;
+    padding-left: 0px !important;
+    font-family:"Oxygen", Ionicons;
+    height: 90px;
+    padding-top: 20px;
 }
 
 .messages .display-message .lign{
     border-top: 2px solid #838282;
     width: 30px;
-    margin-top: 10px;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    opacity: 0.5;
 }
 
 .messages .display-message .display-message-container{
     padding-right: 25px;
     text-align: justify;
     padding-top: 30px;
+    padding-left: 5% !important;
+    padding-right: 5% !important;
 }
 
 .messages .display-message .display-message-container img{
     height: 40px;
     width: 40px;
     border-radius: 100px;
+    
+}
+
+.messages .display-message .display-message-container .left {
+    margin-bottom: 10px;
 }
 
 .messages .display-message .display-message-container .left img{
@@ -211,16 +178,16 @@
 }
 
 .messages .display-message .display-message-container .left-message-content{
-    background: #eeeded;
+    background: #F6F6F7;
     padding: 20px 20px;
     margin-left: 50px;
     margin-top: 0px;
     border-radius: 5px;
-    border: 2px solid #e5e7e9;
 }
 
 .messages .display-message .display-message-container .right{
     position: relative;
+    margin-bottom: 20px;
 }
 
 .messages .display-message .display-message-container .right img{
@@ -231,12 +198,11 @@
 }
 
 .messages .display-message .display-message-container .right-message-content{
-    background: #eeeded;
+    background: #F6F6F7;
     padding: 20px 20px;
     margin-right: 50px;
     margin-top: 15px;
     border-radius: 5px;
-    border: 2px solid #e5e7e9;
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */

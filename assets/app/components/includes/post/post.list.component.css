@@ -112,6 +112,10 @@
     padding-bottom: 30px;
 }
 
+.isLiked{
+    color: red !important;
+}
+
 @media screen and (max-width: 490px) {
 
     .posts .card-content-top .posted_at{

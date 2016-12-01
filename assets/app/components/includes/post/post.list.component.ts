@@ -1,3 +1,4 @@
+import { AppService } from './../../../app.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { PostService } from "./post.service";
 import { Post } from "./post.model";
@@ -9,10 +10,16 @@ import { Post } from "./post.model";
 })
 export class PostsListComponent {
 
+    constructor(private appService : AppService){}
+
     @Input() posts : Post[];
 
-    onLike(){
-        console.log('A new like');
+    isLoggedIn(){
+        return this.appService.isLoggedIn();
+    }
+  
+    onLike(like) {
+        console.log(like);
     }
 
 }
