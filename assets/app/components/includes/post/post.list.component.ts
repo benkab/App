@@ -5,23 +5,14 @@ import { Post } from "./post.model";
 @Component({
     selector: 'posts-list',
     templateUrl: 'post.list.component.html',
-    styleUrls: ['post.list.component.css'],
-    providers: [PostService]
+    styleUrls: ['post.list.component.css']
 })
-export class PostsListComponent implements OnInit{
+export class PostsListComponent {
 
-    posts : Post[];
+    @Input() posts : Post[];
 
-    constructor(private postService : PostService){}
-
-    ngOnInit(){
-
-        this.postService.getPosts()
-            .subscribe(
-                (posts: Post[]) => {
-                    this.posts = posts
-                }
-            );
-
+    onLike(){
+        console.log('A new like');
     }
+
 }

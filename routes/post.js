@@ -5,6 +5,41 @@ var Post        = require('../models/post');
 var bcrypt      = require('bcryptjs');
 var jwt         = require('jsonwebtoken');
 
+// Retrieve posts
+router.get('/', function (req, res, next) {
+
+    Post.find()
+        .sort({created_at : -1})
+        .populate('user')
+        .exec(function (err, posts){
+            if(err){
+                return res.status(500).json({
+                    title : 'An error has occured',
+                    error : err
+                });
+            }
+            res.status(200).json({
+                message : 'Success',
+                obj     : posts
+            });
+        });
+
+
+});
+
+// Routes protections
+router.use('/', function (req, res, next) {
+   jwt.verify(req.query.token, 'secret', function (err, decoded) {
+       if(err){
+           return res.status(401).json({
+               title : 'Not authentificated',
+               error : err
+           });
+       }
+       next();
+   })
+});
+
 // New post
 router.post('/', function (req, res, next) {
 
@@ -33,7 +68,7 @@ router.post('/', function (req, res, next) {
 
             if(err){
                 return res.status(500).json({
-                    title : 'An error has occured while adding the post',
+                    title : 'An error has occured',
                     error : err
                 });
             }
@@ -52,26 +87,5 @@ router.post('/', function (req, res, next) {
 
 });
 
-
-// Retrieve posts
-router.get('/', function (req, res, next) {
-
-    Post.find()
-        .populate('user')
-        .exec(function (err, posts){
-            if(err){
-                return res.status(500).json({
-                    title : 'An error has occured',
-                    error : err
-                });
-            }
-            res.status(200).json({
-                message : 'Success',
-                obj     : posts
-            });
-        });
-
-
-});
 
 module.exports = router;

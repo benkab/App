@@ -12,8 +12,6 @@ import { Post } from "./post.model";
 })
 export class PostsInputComponent {
 
-    post : Post;
-
     constructor(private postService : PostService, private router : Router){}
 
     onCreatePost(form : NgForm) {
@@ -29,7 +27,7 @@ export class PostsInputComponent {
                 error => console.error(error)
             );
 
-        form.reset();
+        form.resetForm();
 
     }
 

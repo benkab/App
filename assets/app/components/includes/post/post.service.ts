@@ -1,14 +1,14 @@
 import { Post } from "./post.model";
 import {Injectable} from "@angular/core";
 import {Http, Headers, Response} from "@angular/http";
-import 'rxjs/Rx';
 import {Observable} from "rxjs";
+import 'rxjs/Rx';
 
 
 @Injectable()
 export class PostService{
 
-    private posts : Post[] = [];
+    private posts : Post[];
 
     constructor(private http: Http){}
 
@@ -20,20 +20,22 @@ export class PostService{
             : '';
         return this.http.post('http://localhost:3000/post' + token, requestBody, {headers: headers})
             .map((response: Response) => {
-                const result     = response.json();
-                const post       = new Post(
-                    result.obj.content,
-                    result.obj.image,
-                    result.obj._id,
-                    result.obj.created_at,
-                    result.obj.user.firstname,
-                    result.obj.user.lastname,
-                    result.obj.user._id,
-                    result.obj.user.position,
-                    result.obj.user.avatar
+
+                const created_post       = new Post(
+                    response.json().obj.content,
+                    response.json().obj.image,
+                    response.json().obj._id,
+                    response.json().obj.created_at,
+                    response.json().obj.user.firstname,
+                    response.json().obj.user.lastname,
+                    response.json().obj.user._id,
+                    response.json().obj.user.position,
+                    response.json().obj.user.avatar
                 );
-                this.posts.push(post);
-                return post;
+
+                this.posts.push(created_post);
+                console.log(this.posts);
+                return created_post;
             })
             .catch((error: Response) => Observable.throw(error.json()));
     }

@@ -24,6 +24,7 @@ import { ProfileComponent } from "./components/pages/profile/profile.component";
 import { HomeComponent } from "./components/pages/home/home.component";
 
 import { routing } from "./app.routing";
+import {MomentModule} from 'angular2-moment';
 
 // Services
 import { AppService } from "./app.service";
@@ -59,7 +60,8 @@ import { AuthGuardService } from "./components/pages/auth/auth.guard.service";
         BrowserModule,
         FormsModule,
         routing,
-        HttpModule
+        HttpModule,
+        MomentModule
     ],
     bootstrap: [AppComponent],
     providers: [AuthService, NavService, AppService, DetailsService, AuthGuardService]

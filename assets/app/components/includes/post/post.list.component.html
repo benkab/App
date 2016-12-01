@@ -5,7 +5,7 @@
             <span class="user-names">{{post.user_firstname}} {{post.user_lastname}}</span>
             <span class="user-title">{{post.user_position}}</span>
         </a>
-        <span class="posted_at right">{{post.created_at}}</span>
+        <span class="posted_at right">{{post.created_at | amTimeAgo}}</span>
     </div>
     <div class="card-image" *ngIf="post.image">
         <img src="/img/posts/sample.jpg">
@@ -16,7 +16,7 @@
             <a href=""><span>15 Comments</span></a>
             <ul class="">
                 <li>
-                    <a href="">
+                    <a class="like" (click)="onLike()" >
                         <span class="icon ion-android-favorite"></span>
                         <span class="like-count">20</span>
                     </a>

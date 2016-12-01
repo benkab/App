@@ -1,6 +1,6 @@
 <div class="col l6 m6 s12 posts">
-    <posts-input></posts-input>
-    <posts-list></posts-list>
+    <posts-input *ngIf="isLoggedIn()"></posts-input>
+    <posts-list [posts]="posts" ></posts-list>
     <!--<div class="card">-->
         <!--<div class="card-content-top">-->
             <!--<a href="" class="user-link">-->

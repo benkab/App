@@ -39,8 +39,10 @@
 }
 
 .posts .card-content-top .posted_at{
-    padding-right: 3px;
+    right: 35px;
     font-size: 12px;
+    position: absolute;
+    padding-top: 5px;
 }
 
 .posts .card-content-top .more{
@@ -82,6 +84,11 @@
     padding-left: 10px;
 }
 
+.posts .card-content-bottom .actions ul li a.like{
+    cursor: pointer;
+}
+
+
 .posts .card-content-bottom .actions ul li a span.icon{
     font-size: 17px;
     opacity: 0.8;
@@ -109,6 +116,13 @@
 
     .posts .card-content-top .posted_at{
         padding-top: 13px;
+    }
+
+    .posts .card-content-top .posted_at{
+        right: 30px;
+        font-size: 12px;
+        position: absolute;
+        padding-top: 12px !important;
     }
 
 }
