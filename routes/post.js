@@ -47,7 +47,7 @@ router.post('/', function (req, res, next) {
 
     var content     = req.body.content;
     var image       = req.body.image;
-    var created_at  = Date();
+    var created_at  = new Date();
     
     var decoded     = jwt.decode(req.query.token);
     User.findById(decoded.user._id, function(err, user){

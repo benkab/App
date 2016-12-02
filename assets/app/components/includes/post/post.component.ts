@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { PostService } from "./post.service";
 import { Post } from "./post.model";
 import { AppService } from './../../../app.service';
+import {Router} from "@angular/router";
 
 @Component({
     selector: 'posts',
@@ -12,8 +13,15 @@ import { AppService } from './../../../app.service';
 export class PostsComponent implements OnInit{
 
     private posts : Post[];
+    private route;
 
-    constructor(private postService : PostService, private appService : AppService){}
+    constructor(
+        private postService : PostService,
+        private appService : AppService,
+        private _route : Router
+    ){
+        this.route = _route;
+    }
 
     ngOnInit(){
 
@@ -29,6 +37,8 @@ export class PostsComponent implements OnInit{
     isLoggedIn(){
         return this.appService.isLoggedIn();
     }
+
+
 
     
 }

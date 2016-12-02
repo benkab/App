@@ -6,5 +6,17 @@ import { Component } from '@angular/core';
     styleUrls: ['./messages.component.css']
 })
 export class MessagesComponent {
-    
+
+    showStyle: false;
+
+    constructor() {
+    }
+
+    getStyle() {
+        if(this.showStyle){
+            return "";
+        } else {
+            return "none";
+        }
+    }
 }

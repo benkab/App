@@ -1,21 +1,27 @@
 .details .card{
     box-shadow: none !important;
-    border: 0.5px solid #E0E0E0;
     margin-bottom: 20px;
-    padding: 20px;
-    text-align: center;
-    padding-top: 30px;
 }
 
 .details .card .user-image-link{
     text-align: center;
 }
 
+.details .card .card-image{
+    border: none;
+}
+
 .details .card img{
-    width: 160px;
-    height: 160px;
-    border-radius: 100%;
+    border-radius: 0px;
     text-align: center;
+}
+
+.details .card .card-content{
+    padding: 20px;
+    text-align: center;
+    padding-top: 30px;
+    border: 0.5px solid #E0E0E0;
+    border-top: none;
 }
 
 .details .card .user-names{

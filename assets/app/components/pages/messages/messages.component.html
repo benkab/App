@@ -3,10 +3,13 @@
         <div class="col s12">
             <div class="card">
                 <div class="row">
-                    <div class="col l4 m4 s12 contacts">
-                        <div class="row">
-                            <div class="input-field col l10 m10 s10 push-l1 push-m1 push-s1 search">
+                    <div class="col l4 hide-on-med-and-down s12 contacts">
+                        <div class="row search-row">
+                            <div class="input-field col l11 m10 s10 search">
                                 <input placeholder="&#xf4a4;" id="search" type="text">
+                            </div>
+                            <div class="col l1 m2 s2 new-conversation">
+                                <a href=""><i class="material-icons">mode_edit</i></a>
                             </div>
                         </div>
                         <div class="row contacts-content">
@@ -51,51 +54,118 @@
                                         <span class="message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt...</span>
                                     </a>
                                 </li>
+                                <li>
+                                    <a href="">
+                                        <img src="/img/user-1.jpg" alt="">
+                                        <span class="user-names">Lizzy Keen</span>
+                                    </a>
+                                    <a href="">
+                                        <span class="time_ago right">a hour ago</span>
+                                        <span class="message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt...</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="/img/user-1.jpg" alt="">
+                                        <span class="user-names">Lizzy Keen</span>
+                                    </a>
+                                    <a href="">
+                                        <span class="time_ago right">a hour ago</span>
+                                        <span class="message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt...</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="/img/user-1.jpg" alt="">
+                                        <span class="user-names">Lizzy Keen</span>
+                                    </a>
+                                    <a href="">
+                                        <span class="time_ago right">a hour ago</span>
+                                        <span class="message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt...</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img src="/img/user-1.jpg" alt="">
+                                        <span class="user-names">Lizzy Keen</span>
+                                    </a>
+                                    <a href="">
+                                        <span class="time_ago right">a hour ago</span>
+                                        <span class="message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt...</span>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col l8 m8 s12 messages-list-container">
-                        <div class="row display-message">
-                            <div class="message-title">
-                                Beni Kabona
-                                <p class="lign"></p>
-                            </div>
-                            <div class="row display-message-container">
+                    <div class="col l8 m12 s12 listing-messages-container">
+                        <div class="card listing-messages">
+                            <div class="card-content">
                                 <div class="row">
                                     <div class="left">
                                         <img src="/img/user-1.jpg" alt="">
-                                        <div class="left-message-content">
+                                        <div class="left-message-content" (click)="showStyle = !showStyle;">
                                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus dolore, ex ipsa reprehenderit temporibus facere ea. Omnis quo veritatis, ipsa. Veniam, excepturi nisi nam consequatur earum, repellat voluptatum ducimus doloribus.
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="right">
-                                        <div class="right-message-content">
-                                            Lorem ipsum dolor sit amet.
-                                        </div>
-                                        <img src="/img/user-default.png" alt="">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="right">
-                                        <div class="right-message-content">
-                                            Lorem ipsum dolor sit amet.
-                                        </div>
-                                        <img src="/img/user-1.jpg" alt="">
+                                        <small class="right" [style.display]="getStyle()">02/12/2016 at 12:53</small>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="left">
-                                        <img src="/img/user-default.png" alt="">
+                                        <img src="/img/user-1.jpg" alt="">
                                         <div class="left-message-content">
                                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis quo veritatis, ipsa. Veniam, excepturi nisi nam consequatur earum.
                                         </div>
+                                        <small class="right">02/12/2016 at 12:53</small>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="right">
+                                        <div class="right-message-content">
+                                            Lorem ipsum dolor sit amet.
+                                        </div>
+                                        <img src="/img/user-default.png" alt="">
+                                        <small class="left">02/12/2016 at 12:53</small>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="right">
+                                        <div class="right-message-content">
+                                            Lorem ipsum dolor sit amet.
+                                        </div>
+                                        <img src="/img/user-default.png" alt="">
+                                        <small class="left">02/12/2016 at 12:53</small>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="left">
+                                        <img src="/img/user-1.jpg" alt="">
+                                        <div class="left-message-content" (click)="showStyle = !showStyle;">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus dolore, ex ipsa reprehenderit temporibus facere ea. Omnis quo veritatis, ipsa. Veniam, excepturi nisi nam consequatur earum, repellat voluptatum ducimus doloribus.
+                                        </div>
+                                        <small class="right" [style.display]="getStyle()">02/12/2016 at 12:53</small>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="left">
+                                        <img src="/img/user-1.jpg" alt="">
+                                        <div class="left-message-content">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis quo veritatis, ipsa. Veniam, excepturi nisi nam consequatur earum.
+                                        </div>
+                                        <small class="right">02/12/2016 at 12:53</small>
                                     </div>
                                 </div>
                             </div>
-                            <div class="input-field row new_message_container">
-                                <textarea placeholder="Your message" id="new_message" class="materialize-textarea new_message"></textarea>
+                            <div class="card-action">
+                                <div class="row">
+                                    <form action="">
+                                        <div class="input-field col s11">
+                                            <textarea placeholder="Your message"></textarea>
+                                        </div>
+                                        <div class="col s1 right-align">
+                                            <button type="submit"><i class="material-icons">send</i></button>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>

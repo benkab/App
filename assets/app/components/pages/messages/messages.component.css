@@ -3,12 +3,29 @@
 }
 
 .messages .card{
+    margin: 0px !important;
     padding: 0px !important;
     box-shadow: none !important;
     border: 0.5px solid #E0E0E0;
     background: #FEFEFE;
     margin-bottom: 20px;
+    /*height: 682px;*/
 }
+
+.messages .card .search-row{
+    padding-left: 10px !important;
+    padding-right: 17px !important;
+}
+
+.messages .card .search-row .new-conversation{
+    padding-top: 18px !important;
+}
+
+.messages .card .search-row .new-conversation a{
+    text-decoration: none;
+    color: #908E8E;
+}
+
 
 .messages .contacts{
     height: 680px;
@@ -22,10 +39,10 @@
     outline: none;
     border: none;
     box-shadow: none;
-    font-size: 13x;
+    font-size: 13px;
     border: 2px solid #e5e7e9;
     background: #f2f4f4;
-    border-radius: 5px;
+    border-radius: 0px;
     margin: 0px !important;
     height: 32px;
     text-indent: 10px;
@@ -36,7 +53,9 @@
 .messages .contacts .contacts-content{
     padding-left: 0px;
     padding-right: 0px;
-    overflow: hidden;
+    overflow: scroll;
+    height: 605px;
+    overflow-x:hidden !important;
 }
 
 .messages .contacts .contacts-content ul li{
@@ -51,6 +70,12 @@
     background: #EFF3F6 !important;
     border-left: 2px solid #7BBDEF !important;
 }
+
+.messages .contacts .contacts-content ul li:hover{
+    background: #EFF3F6 !important;
+    border-left: 2px solid #7BBDEF !important;
+}
+
 .messages .contacts .contacts-content ul li a{
     text-decoration: none;
     width: 100%;
@@ -71,6 +96,7 @@
     left: 100px;
     display: inline;
     top: 13px;
+    font-weight: bold;
 }
 
 .messages .contacts .contacts-content ul li a span.time_ago{
@@ -91,129 +117,132 @@
     margin-right: 11%;
 }
 
-.messages .messages-list-container{
-    padding-top: 25px;
+.messages .listing-messages-container{
     padding-left: 0px !important;
     padding-right: 0px !important;
-    padding-bottom: 0px !important;
-}
-
-.messages .display-message{
-    position: relative;
     height: 680px;
-    padding-top: 17px;
 }
 
-.messages .display-message .message-title{
-    padding-left: 5% !important;
+
+.messages .listing-messages-container .card{
+    height: 680px;
+    border-right: none;
+    border-top: none;
+    border-bottom: none;
+    overflow: hidden !important;
 }
 
-.messages .display-message .new_message_container{
+.messages .listing-messages-container .card .card-content{
+    height: 520px !important;
+    /*background: #F7F7F7;*/
+    position: relative;
+    padding: 25px 35px !important;
+    overflow: scroll;
+    overflow-x:hidden !important;
+}
+
+
+.messages .listing-messages-container .left {
+    margin-bottom: 20px;
+}
+
+.messages .listing-messages-container .left small {
+    padding-top: 10px;
+    margin-bottom: 0px !important;
+    padding-bottom: 0px !important;
+
+}
+
+.messages .listing-messages-container .left img{
     position: absolute;
-    bottom: 0px !important;
-    width: 100%;
-    padding-right: 50px;
-}
-.messages .display-message .new_message{
-    outline: none;
-    border: none;
-    box-shadow: none;
-    font-size: 13px;
-    border: none !important;
-    background: #f2f4f4;
-    border-radius: 0px;
-    margin: 0px !important;
-    height: 80px !important;
-    padding-left: 0px !important;
-    font-family:"Oxygen", Ionicons;
-    height: 90px;
-    padding-top: 20px;
-}
-
-.messages .display-message .new_message textarea{
-    outline: none;
-    border: none;
-    box-shadow: none;
-    font-size: 13px;
-    border: none !important;
-    background: #f2f4f4;
-    border-radius: 0px;
-    margin: 0px !important;
-    height: 80px !important;
-    padding-left: 0px !important;
-    font-family:"Oxygen", Ionicons;
-    height: 90px;
-    padding-top: 20px;
-}
-
-.messages .display-message .lign{
-    border-top: 2px solid #838282;
-    width: 30px;
-    margin-top: 15px;
-    margin-bottom: 25px;
-    opacity: 0.5;
-}
-
-.messages .display-message .display-message-container{
-    padding-right: 25px;
-    text-align: justify;
-    padding-top: 30px;
-    padding-left: 5% !important;
-    padding-right: 5% !important;
-}
-
-.messages .display-message .display-message-container img{
-    height: 40px;
     width: 40px;
-    border-radius: 100px;
-    
+    height: 40px;
+    border-radius: 100%;
+    margin-top: 10px;
 }
 
-.messages .display-message .display-message-container .left {
-    margin-bottom: 10px;
-}
-
-.messages .display-message .display-message-container .left img{
-    position: absolute;
-}
-
-.messages .display-message .display-message-container .left-message-content{
-    background: #F6F6F7;
-    padding: 20px 20px;
+.messages .listing-messages-container .left-message-content{
+    /*background: #F6F6F7;*/
+    padding: 13px 20px;
     margin-left: 50px;
     margin-top: 0px;
-    border-radius: 5px;
+    border-radius: 0px;
+    background: #EFF3F6;
 }
 
-.messages .display-message .display-message-container .right{
+
+.messages .listing-messages-container .right{
     position: relative;
     margin-bottom: 20px;
 }
 
-.messages .display-message .display-message-container .right img{
+.messages .listing-messages-container .right img{
     position: absolute;
     top: 0px;
-    margin-top: 15px;
+    margin-top: 10px;
     right: 0px;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
 }
 
-.messages .display-message .display-message-container .right-message-content{
+.messages .listing-messages-container .right small {
+    padding-top: 10px;
+    margin-bottom: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+.messages .listing-messages-container .right-message-content{
     background: #F6F6F7;
-    padding: 20px 20px;
+    padding: 13px 20px;
     margin-right: 50px;
-    margin-top: 15px;
-    border-radius: 5px;
+    border-radius: 0px;
 }
 
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: #838282;
+.messages .listing-messages-container .card .card-action{
+
 }
-::-moz-placeholder { /* Firefox 19+ */
-  color: #838282;
+
+
+.messages .listing-messages-container .card .card-action textarea{
+    height: 100px !important;
+    box-shadow: none;
+    outline: none;
+    border: none;
+    resize: none;
+    opacity: 0.8;
 }
-:-ms-input-placeholder { /* IE 10+ */
-  color: #838282;
+
+.messages .listing-messages-container .card .card-action .row{
+    /*border: 1px solid #000000;*/
 }
-:-moz-placeholder { /* Firefox 18- */
-  color: #838282;
+
+.messages .listing-messages-container .card .card-action button{
+    background: transparent;
+    border: none;
+    padding: 0px !important;
+
+}
+
+.messages .listing-messages-container .card .card-action button i{
+    font-size: 19px;
+    margin-top: 10px;
+    opacity: 0.6;
+    margin-right: 10px !important;
+}
+
+
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 0px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
 }
