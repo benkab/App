@@ -37,8 +37,7 @@ import { DetailsService } from './components/includes/detail/detail.service';
 import { AuthGuardService } from "./components/pages/auth/auth.guard.service";
 import { SeachService } from "./components/includes/search/search.service";
 import { UserService } from "./components/pages/user/user.service";
-
-
+import { PostService } from './components/includes/post/post.service';
 
 @NgModule({
     declarations: [
@@ -78,7 +77,8 @@ import { UserService } from "./components/pages/user/user.service";
         DetailsService,
         AuthGuardService,
         SeachService,
-        UserService
+        UserService,
+        PostService
     ]
 })
 export class AppModule {

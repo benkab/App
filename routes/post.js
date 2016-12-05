@@ -13,6 +13,7 @@ router.get('/', function (req, res, next) {
         .sort({created_at : -1})
         .populate('user')
         .populate('likes')
+        .populate('comments')
         .exec(function (err, posts){
             if(err){
                 return res.status(500).json({
@@ -25,7 +26,6 @@ router.get('/', function (req, res, next) {
                 obj     : posts
             });
         });
-
 
 });
 
@@ -47,7 +47,6 @@ router.post('/', function (req, res, next) {
 
     var content     = req.body.content;
     var image       = req.body.image;
-    var created_at  = new Date();
     
     var decoded     = jwt.decode(req.query.token);
     User.findById(decoded.user._id, function(err, user){
@@ -62,7 +61,6 @@ router.post('/', function (req, res, next) {
         var post = new Post({
             content         : content,
             image           : image,
-            created_at      : created_at,
             user            : user
         });
 
@@ -83,25 +81,44 @@ router.post('/', function (req, res, next) {
 
         });
 
-        // var like = new Like({
-        //     liked : false,
-        //     user  : user,
-        //     post  : post
-        // });
-        
-        // like.save(function(err, result){
-        //     if(err){
-        //         return res.status(500).json({
-        //             title : 'An error has occured',
-        //             error : err
-        //         });
-        //     }
-        // });
-
     });
 
 
 
+});
+
+// Delete post
+router.delete('/:id', function (req, res, next) {
+    
+    var id     = req.params.id;
+    Post.findById(id, function(err, post){
+
+        if(err){
+            return res.status(500).json({
+                title : 'An error has occured',
+                error : err
+            });
+        }
+        if(!post){
+            return res.status(500).json({
+                title : 'No post found',
+                error : err
+            });
+        }
+
+        post.remove(function (err, result) {
+            if(err){
+                return res.status(500).json({
+                    title : 'An error has occured',
+                    error : err
+                });
+            }
+            res.status(201).json({
+                message : 'Your post has been deleted!',
+                obj     : result
+            });
+        });
+    });
 });
 
 

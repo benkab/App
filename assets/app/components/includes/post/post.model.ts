@@ -10,6 +10,7 @@ export class Post{
         public user_id? : String,
         public user_position? : String,
         public user_avatar? : String,
-        public like_state? : String        
+        public like_state? : String,
+        public comments?    : any        
     ){}
 }

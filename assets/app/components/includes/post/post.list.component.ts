@@ -1,5 +1,5 @@
 import { AppService } from './../../../app.service';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PostService } from "./post.service";
 import { Post } from "./post.model";
 
@@ -10,9 +10,11 @@ import { Post } from "./post.model";
 })
 export class PostsListComponent {
 
-    constructor(private appService : AppService){}
-
     @Input() posts : Post[];
+    
+    showStyle: false;
+
+    constructor(private appService : AppService, private postService : PostService){}
 
     isLoggedIn(){
         return this.appService.isLoggedIn();
@@ -20,6 +22,27 @@ export class PostsListComponent {
   
     onLike(like) {
         console.log(like);
+    }
+
+    onEdit(post : Post){
+        this.postService.editPost(post);
+    }
+
+    onDelete(post : Post){
+        this.postService.deletePost(post)
+            .subscribe( result => console.log(result));
+    }
+
+    belongsToUser(post : Post){
+        return localStorage.getItem('userId') == post.user_id;
+    }
+
+    getStyle() {
+        if(this.showStyle){
+            return "";
+        } else {
+            return "none";
+        }
     }
 
 }

@@ -1,5 +1,5 @@
 import { Post } from "./post.model";
-import {Injectable} from "@angular/core";
+import {Injectable, EventEmitter} from "@angular/core";
 import {Http, Headers, Response} from "@angular/http";
 import {Observable} from "rxjs";
 import 'rxjs/Rx';
@@ -8,11 +8,13 @@ import 'rxjs/Rx';
 @Injectable()
 export class PostService{
 
-    private posts : Post[];
+    private posts : Post[] = [];
+    postToBeEdited = new EventEmitter<Post>();
 
     constructor(private http: Http){}
 
-    createPost(post: Post){
+    createPost(post: Post)
+    {
         const requestBody   = JSON.stringify(post);
         const headers       = new Headers({'Content-Type': 'application/json'});
         const token         = localStorage.getItem('token')
@@ -30,11 +32,11 @@ export class PostService{
                     response.json().obj.user.lastname,
                     response.json().obj.user._id,
                     response.json().obj.user.position,
-                    response.json().obj.user.avatar
+                    response.json().obj.user.avatar,
+                    response.json().obj.comments
                 );
 
                 this.posts.push(created_post);
-                console.log(this.posts);
                 return created_post;
             })
             .catch((error: Response) => Observable.throw(error.json()));
@@ -67,6 +69,20 @@ export class PostService{
             .catch((error: Response) => Observable.throw(error.json()));
     }
 
+    editPost(post: Post)
+    {
+        this.postToBeEdited.emit(post);
+    }
 
+    deletePost(post : Post)
+    {
+        this.posts.splice(this.posts.indexOf(post), 1);
+        const token         = localStorage.getItem('token')
+            ? '?token=' + localStorage.getItem('token')
+            : '';
+        return this.http.delete('http://localhost:3000/post/' + post.id + token)
+            .map((response: Response) => response.json())
+            .catch((error: Response) => Observable.throw(error.json()));
+    }
 
 }

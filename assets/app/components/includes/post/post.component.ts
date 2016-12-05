@@ -7,12 +7,12 @@ import {Router} from "@angular/router";
 @Component({
     selector: 'posts',
     templateUrl: 'post.component.html',
-    styleUrls: ['post.component.css'],
-    providers: [PostService]
+    styleUrls: ['post.component.css']
 })
 export class PostsComponent implements OnInit{
-
-    private posts : Post[];
+    
+    posts : Post[];
+    
     private route;
 
     constructor(
@@ -23,22 +23,17 @@ export class PostsComponent implements OnInit{
         this.route = _route;
     }
 
-    ngOnInit(){
+    isLoggedIn(){
+        return this.appService.isLoggedIn();
+    }
 
+    ngOnInit(){
         this.postService.getPosts()
             .subscribe(
                 (posts: Post[]) => {
                     this.posts = posts
                 }
             );
-
     }
-
-    isLoggedIn(){
-        return this.appService.isLoggedIn();
-    }
-
-
-
-    
+  
 }

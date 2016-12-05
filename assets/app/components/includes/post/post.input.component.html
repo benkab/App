@@ -1,7 +1,15 @@
 <div class="card posts-input">
     <form #post="ngForm" (ngSubmit)="onCreatePost(post)">
         <div class="input-field">
-            <textarea id="content" name="content" class="materialize-textarea" placeholder="Share your thoughts..." ngModel required autocomplete="off"></textarea>
+            <textarea 
+                id="content" 
+                class="materialize-textarea" 
+                placeholder="Share your thoughts..." 
+                [ngModel] = "post?.content" 
+                name="content" 
+                required 
+                autocomplete="off"
+            ></textarea>
         </div>
         <div class="file-field input-field">
             <span class="icon ion-image"></span>

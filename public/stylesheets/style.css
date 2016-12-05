@@ -53,6 +53,17 @@ search-list{
 
 @media screen and (max-width: 490px) {
 
+  search{
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    /*background: #EFF3F6 !important;*/
+  }
+
+  search-list{
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+  }
+
   .card .card-content-top{
     padding: 25px 30px !important;
   }

@@ -13,8 +13,20 @@
     <div class="card-content-bottom">
         <p class="post-content">{{post.content}}</p>
         <div class="actions">
-            <a href=""><span>15 Comments</span></a>
-            <ul class="">
+            <a (click)="showStyle = !showStyle;"><span>15 Comments</span></a>
+            <ul class="left left-actions" *ngIf="belongsToUser(post) && isLoggedIn()" >
+                <li class="edit_delete">
+                    <a (click)="onEdit(post)">
+                        <i class="material-icons">mode_edit</i>
+                    </a>
+                </li>
+                <li class="edit_delete">
+                    <a (click)="onDelete(post)">
+                        <i class="material-icons">delete</i>
+                    </a>
+                </li>
+            </ul>
+            <ul class="right-actions">
                 <li>
                     <a *ngIf="!isLoggedIn()">
                         <span class="icon ion-android-favorite"></span>
@@ -25,20 +37,15 @@
                         <span class="like-count">20</span>
                     </a>
                 </li>
-                <li>
+                <li *ngIf="isLoggedIn()">
                     <a href="">
                         <span class="icon ion-android-share-alt"></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="" class="more">
-                        <span class="icon ion-android-more-vertical"></span>
                     </a>
                 </li>
             </ul>
         </div>
     </div>
-    <!--<div class="card-footer">-->
-    <!--<comments></comments>-->
-    <!--</div>-->
+    <div class="card-footer" [style.display]="getStyle()">
+        <comments></comments>
+    </div>
 </div>
