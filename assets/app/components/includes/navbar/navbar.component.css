@@ -14,6 +14,9 @@
 .navbar-container .left-column{
      padding-top: 4px;
      padding-bottom: 13px !important;
+    position: relative;
+    padding-right: 0px !important;
+    padding-left: 0px !important;
 }
 
 .navbar-container .right-column{

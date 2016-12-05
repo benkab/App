@@ -1,8 +1,65 @@
 var express     = require('express');
 var router      = express.Router();
 var User        = require('../models/user');
+var Post        = require('../models/post');
+var Like        = require('../models/like');
 var bcrypt      = require('bcryptjs');
 var jwt         = require('jsonwebtoken');
+
+
+// Get user profile
+router.get('/user-profile/:firstname/:lastname', function (req, res, next) {
+
+    var firstname = req.params.firstname;
+    var lastname = req.params.lastname;
+
+    console.log(firstname);
+    console.log(lastname);
+
+    User.findOne([{"firstname" : firstname}, {"lastname" : lastname}], function(err, user){
+        if(err){
+            return res.status(500).json({
+                title : 'An error has occured while retrieving the user',
+                error : err
+            });
+        }
+        if(!user){
+            return res.status(500).json({
+                title : 'Something went wrong',
+                error : {message : 'Ops! bad way!'}
+            });
+        }
+        res.status(200).json({
+            message : 'The Auth',
+            obj     : user
+        });
+        console.log(user);
+    });
+
+});
+
+// Retrieve all users
+router.get('/search/:term', function (req, res, next) {
+
+    var term = new RegExp(req.params.term, 'i');
+
+    User.find()
+        .or([{"firstname": {$regex : term}}, {"lastname": {$regex : term}}, {"position": {$regex : term}}])
+        .exec(function (err, users){
+            if(err){
+                return res.status(500).json({
+                    title : 'An error has occured',
+                    error : err
+                });
+            }
+            res.status(200).json({
+                message : 'Success',
+                obj     : users
+            });
+        });
+
+
+});
 
 // New user
 router.post('/', function (req, res, next) {
@@ -98,5 +155,9 @@ router.get('/:id', function (req, res, next) {
     });
 
 });
+
+
+
+
 
 module.exports = router;

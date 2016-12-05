@@ -45,6 +45,11 @@ input.ng-valid{
   border-bottom: 2px solid #E0E0E0;
 }
 
+search-list{
+  padding: 0px !important;
+}
+
+
 
 @media screen and (max-width: 490px) {
 

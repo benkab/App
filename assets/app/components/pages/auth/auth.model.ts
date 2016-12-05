@@ -7,6 +7,8 @@ export class User{
         public firstname? : String,
         public lastname? : String,
         public description? : String,
-        public avatar? : String
+        public avatar? : String,
+        public posts ? : any,
+        public id?     : String
     ){}
 }

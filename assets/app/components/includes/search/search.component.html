@@ -1,0 +1,24 @@
+<input
+        type="text"
+        class="search"
+        placeholder="&#xF002;"
+        style="font-family:Oxygen, FontAwesome"
+        ngModel
+        name="search"
+        #search
+        (keyup)="onSearch(search)">
+
+<div class="card search-list">
+    <div class="row" *ngFor="let user of users" [style.display]="display" [routerLink]="['/user', user.firstname, user.lastname]">
+        <div class="col l2 m3 s2">
+            <img src="/img/{{user.avatar}}" alt="user-image">
+        </div>
+        <div class="col l6 m6 s6 user-details">
+            <span class="user-names">{{user.firstname}} {{user.lastname}}</span><br>
+            <span class="user-title">{{user.position}}</span>
+        </div>
+        <div class="col l4 m3 s4 right-align user-posts-details">
+            <span class="posts-count"><span class="post-number">{{user.posts.length}}</span> posts</span>
+        </div>
+    </div>
+</div>
