@@ -13,7 +13,7 @@
     <div class="card-content-bottom">
         <p class="post-content">{{post.content}}</p>
         <div class="actions">
-            <a (click)="showStyle = !showStyle;"><span>15 Comments</span></a>
+            <a (click)="showStyle = !showStyle;"><span>10 Comments</span></a>
             <ul class="left left-actions" *ngIf="belongsToUser(post) && isLoggedIn()" >
                 <li class="edit_delete">
                     <a (click)="onEdit(post)">

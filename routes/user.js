@@ -8,15 +8,16 @@ var jwt         = require('jsonwebtoken');
 
 
 // Get user profile
-router.get('/user-profile/:firstname/:lastname', function (req, res, next) {
+router.get('/profile/:firstname/:lastname', function (req, res, next) {
 
     var firstname = req.params.firstname;
     var lastname = req.params.lastname;
 
-    console.log(firstname);
-    console.log(lastname);
 
-    User.findOne([{"firstname" : firstname}, {"lastname" : lastname}], function(err, user){
+    User.find()
+        .populate('posts')
+        .or([{"firstname": {$regex : firstname}}, {"lastname": {$regex : lastname}}])
+        .exec(function(err, user){
         if(err){
             return res.status(500).json({
                 title : 'An error has occured while retrieving the user',
@@ -33,7 +34,7 @@ router.get('/user-profile/:firstname/:lastname', function (req, res, next) {
             message : 'The Auth',
             obj     : user
         });
-        console.log(user);
+
     });
 
 });
@@ -130,31 +131,31 @@ router.post('/signin', function (req, res, next) {
     
 });
 
-// Retrieve user
-router.get('/:id', function (req, res, next) {
-
-    var id = req.params.id;
-
-    User.findById(id, function(err, user){
-        if(err){
-            return res.status(500).json({
-                title : 'An error has occured while retrieving the user',
-                error : err
-            });
-        }
-        if(!user){
-            return res.status(500).json({
-                title : 'Something went wrong',
-                error : {message : 'Ops! bad way!'}
-            });
-        }
-        res.status(200).json({
-            message : 'The Auth',
-            obj     : user
-        });
-    });
-
-});
+// // Retrieve user
+// router.get('/:id', function (req, res, next) {
+//
+//     var id = req.params.id;
+//
+//     User.findById(id, function(err, user){
+//         if(err){
+//             return res.status(500).json({
+//                 title : 'An error has occured while retrieving the user',
+//                 error : err
+//             });
+//         }
+//         if(!user){
+//             return res.status(500).json({
+//                 title : 'Something went wrong',
+//                 error : {message : 'Ops! bad way!'}
+//             });
+//         }
+//         res.status(200).json({
+//             message : 'The Auth',
+//             obj     : user
+//         });
+//     });
+//
+// });
 
 
 module.exports = router;

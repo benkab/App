@@ -2,6 +2,7 @@ import { AppService } from './../../../app.service';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PostService } from "./post.service";
 import { Post } from "./post.model";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
     selector: 'posts-list',
@@ -11,10 +12,14 @@ import { Post } from "./post.model";
 export class PostsListComponent {
 
     @Input() posts : Post[];
-    
+
     showStyle: false;
 
-    constructor(private appService : AppService, private postService : PostService){}
+    constructor(
+        private appService : AppService,
+        private postService : PostService,
+        private route: ActivatedRoute
+    ){}
 
     isLoggedIn(){
         return this.appService.isLoggedIn();
@@ -44,5 +49,6 @@ export class PostsListComponent {
             return "none";
         }
     }
+
 
 }

@@ -17,12 +17,12 @@ export class DetailsComponent implements OnInit{
 
         var userId = localStorage.getItem('userId');
 
-        this.detailsService.getUser(userId)
-            .subscribe(
-                (user: User) => {
-                    this.user = user
-                }
-            );
+        // this.detailsService.getUser(userId)
+        //     .subscribe(
+        //         (user: User) => {
+        //             this.user = user
+        //         }
+        //     );
 
     }
 }

@@ -2,7 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { PostService } from "./post.service";
 import { Post } from "./post.model";
 import { AppService } from './../../../app.service';
-import {Router} from "@angular/router";
+import { Router } from "@angular/router";
+
 
 @Component({
     selector: 'posts',

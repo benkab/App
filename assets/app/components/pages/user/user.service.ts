@@ -14,7 +14,7 @@ export class UserService{
 
     getUser(user : User) {
 
-        return this.http.get('http://localhost:3000/user-profile/' + user.firstname + '/' + user.lastname)
+        return this.http.get('http://localhost:3000/user/profile/' + user.firstname + '/' + user.lastname)
             .map((response: Response) => {
 
                 const user = new User(

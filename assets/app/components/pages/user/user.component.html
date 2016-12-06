@@ -1,9 +1,12 @@
 <div class="row profile">
     <div class="container">
         <div class="col l3">
-            <user-details></user-details>
+            <user-details [user]="user"></user-details>
         </div>
-        <posts></posts>
+        <div class="col l6">
+            {{user?.posts}}
+            <posts-list [posts]="user?.posts" ></posts-list>
+        </div>
         <div class="col l3 timeline-right-side">
             <div class="card">
                 <div class="card-content-top">

@@ -10,7 +10,6 @@ var jwt         = require('jsonwebtoken');
 router.get('/', function (req, res, next) {
 
     Post.find()
-        .sort({created_at : -1})
         .populate('user')
         .populate('likes')
         .populate('comments')
@@ -25,6 +24,7 @@ router.get('/', function (req, res, next) {
                 message : 'Success',
                 obj     : posts
             });
+
         });
 
 });
